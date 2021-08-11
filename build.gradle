@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+configurations.all {
+    resolutionStrategy {
+        force "io.cucumber:cucumber-core:6.11.0"
+    }
+}
+
+dependencies {
+    testCompile "net.serenity-bdd:serenity-core:2.5.7",
+            "net.serenity-bdd:serenity-cucumber4:2.1.2",
+            "io.cucumber:cucumber-core:6.11.0",
+            "io.cucumber:cucumber-junit:6.11.0"
+
+    // Other dependencies
+    testCompile "org.slf4j:slf4j-api:1.7.5",
+            "junit:junit:4.12",
+            "org.assertj:assertj-core:1.7.0"
+}
